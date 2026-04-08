@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster Ultra | 200 Todos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="glass-orb orb-1"></div>
+    <div class="glass-orb orb-2"></div>
+
+    <div class="app-shell">
+        <header class="main-header">
+            <div class="header-top">
+                <div class="brand">
+                    <h1>TaskMaster<span>.</span></h1>
+                    <p id="date-display">Productivity Dashboard</p>
+                </div>
+                <div class="progress-box">
+                    <svg class="progress-ring" width="54" height="54">
+                        <circle class="ring-bg" stroke="#e2e8f0" stroke-width="4" fill="transparent" r="24" cx="27" cy="27"/>
+                        <circle class="ring-fill" id="progress-circle" stroke="url(#accent-grad)" stroke-width="4" stroke-linecap="round" fill="transparent" r="24" cx="27" cy="27"/>
+                        <defs>
+                            <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#8b5cf6" />
+                                <stop offset="100%" stop-color="#6366f1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span id="progress-percent">0%</span>
+                </div>
+            </div>
+
+            <div class="search-actions">
+                <div class="search-wrapper">
+                    <input type="text" id="search-bar" placeholder="Find a task...">
+                </div>
+                <button id="add-btn" class="btn-primary">Add Todo</button>
+            </div>
+
+            <nav class="filter-bar">
+                <button class="filter-tab" data-filter="incomplete">Incomplete</button>
+                <button class="filter-tab" data-filter="completed">Completed</button>
+                <button class="filter-tab active" data-filter="all">All</button>
+            </nav>
+        </header>
+
+        <main class="content-area">
+            <div id="loader" class="loader-container">
+                <div class="pulse-ring"></div>
+                <p>Syncing Tasks...</p>
+            </div>
+            
+            <div id="todo-grid" class="todo-grid"></div>
+        </main>
+    </div>
+
+    <div id="toast" class="toast">New task added at the bottom!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
